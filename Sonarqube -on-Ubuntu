@@ -1,0 +1,9 @@
+sudo apt update
+sudo apt install openjdk-11-jdk
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.2.46101.zip
+sudo unzip sonarqube-8.9.2.46101.zip -d /opt
+sudo mv /opt/sonarqube-8.9.2.46101 /opt/sonarqube
+sudo groupadd sonar
+sudo useradd -c "SonarQube service" -d /opt/sonarqube -g sonar sonar
+sudo chown -R sonar:sonar /opt/sonarqube
+sudo nano /opt/sonarqube/conf/sonar.properties
