@@ -1,0 +1,12 @@
+wget https://github.com/prometheus/prometheus/releases/download/v2.30.3/prometheus-2.30.3.linux-amd64.tar.gz
+tar xvfz prometheus-*.tar.gz
+sudo mv prometheus-2.30.3.linux-amd64 /usr/local/prometheus
+sudo nano /usr/local/prometheus/prometheus.yml
+# Add the following basic configuration to prometheus.yml:
+# global:
+#   scrape_interval: 15s
+# scrape_configs:
+#   - job_name: 'prometheus'
+#     static_configs:
+#       - targets: ['localhost:9090']
+/usr/local/prometheus/prometheus --config.file=/usr/local/prometheus/prometheus.yml
